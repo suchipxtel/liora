@@ -1,73 +1,117 @@
-# Welcome to your Lovable project
+🌐 Liora – AI-Powered Medical Document Assistant
 
-## Project info
+Liora is an advanced, AI-driven healthcare web application designed to bridge the gap between overwhelming medical paperwork and patient-friendly understanding. Hospitals often discharge patients with 50+ pages of dense, jargon-filled documents that leave people confused, anxious, and at risk of missing critical treatment details. Liora transforms these documents into clear, actionable insights with personalized guidance — empowering patients to take control of their healthcare journey.
 
-**URL**: https://lovable.dev/projects/fe62ba3e-beb5-4ac5-ae79-55bbaccf1b4e
+🚑 Problem We’re Solving
 
-## How can I edit this code?
+Medical Jargon Overload: Patients are discharged with technical reports, acronyms, and codes that are nearly impossible to interpret without medical training.
 
-There are several ways of editing your application.
+Health Literacy Gap: Misinterpretations can lead to medication errors, skipped follow-ups, and avoidable hospital readmissions.
 
-**Use Lovable**
+Financial Burden: Patients are unaware of cheaper alternatives for prescribed medications, leading to unnecessary financial strain.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/fe62ba3e-beb5-4ac5-ae79-55bbaccf1b4e) and start prompting.
+Liora addresses all three challenges by combining AI medical analysis, simplified summaries, and real-time pricing intelligence into a single intuitive platform.
 
-Changes made via Lovable will be committed automatically to this repo.
+💡 How Liora Works
+1. Upload Your Document
 
-**Use your preferred IDE**
+Patients or caregivers can securely upload discharge summaries, lab results, or prescription instructions (PDF, JPG, PNG).
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+HIPAA-compliant de-identification: personal identifiers like name, DOB, and address are automatically stripped.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Secure data handling: encrypted transfers, no long-term storage.
 
-Follow these steps:
+2. AI-Powered Analysis
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+Liora runs advanced natural language processing (NLP) pipelines to:
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Extract medical terminology and simplify explanations.
 
-# Step 3: Install the necessary dependencies.
-npm i
+Detect key findings and highlight clinical outcomes.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+Provide a confidence score for transparency.
 
-**Edit a file directly in GitHub**
+3. Simplified Insights
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Easy-to-read explanations of diagnoses.
 
-**Use GitHub Codespaces**
+Visual illustrations (e.g., heart diagrams for cardiovascular conditions).
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Highlighted treatment steps explained in plain English.
 
-## What technologies are used for this project?
+4. Personalized Guidance
 
-This project is built with:
+Drug Price Comparison: Real-time GIS-optimized pharmacy pricing for prescribed medications.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Treatment Plan Summary: Clear breakdown of what doctors did, why, and what comes next.
 
-## How can I deploy this project?
+Medication Tracker: List of prescribed drugs with dosage instructions.
 
-Simply open [Lovable](https://lovable.dev/projects/fe62ba3e-beb5-4ac5-ae79-55bbaccf1b4e) and click on Share -> Publish.
+🖥️ Tech Stack
 
-## Can I connect a custom domain to my Lovable project?
+Frontend
 
-Yes, you can!
+⚡ Vite – blazing-fast bundler and dev server.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+⚛️ React (TypeScript) – modular, type-safe UI.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+🎨 Tailwind CSS – utility-first styling.
+
+🧩 shadcn-ui – prebuilt, accessible React components integrated with Tailwind.
+
+🏥 Custom Design System (Liora Blue Palette) – professional HSL color tokens, gradients, shadows, animations designed for healthcare trust and accessibility.
+
+Design Features
+
+Accessibility-first (contrast modes, medical jargon highlighting).
+
+Smooth animations (slide-up, highlight-pulse, progress-flow).
+
+Consistent branding via reusable styles (--gradient-liora, --shadow-soft, etc.).
+
+Architecture
+
+Modular file structure with components/, pages/, lib/, and utils.ts.
+
+Config-driven (vite.config.ts, tailwind.config.ts, tsconfig.json).
+
+Scalable and maintainable for future expansions (EHR integration, multilingual support).
+
+📸 System Flow
+
+Upload Medical Document
+→
+
+AI-Powered Processing (text extraction + de-identification + medical NLP)
+→
+
+Simplified Summary & Insights (readable explanations + illustrations)
+→
+
+Personalized Guidance (drug price comparison, treatment breakdown, medication tracker)
+
+🚀 Future Scope
+
+🌍 Multilingual Support: Expanding accessibility for non-English speakers.
+
+🤝 EHR Integration: Direct sync with hospital electronic health record systems.
+
+📱 Mobile App: Patient-facing app for iOS/Android with push reminders.
+
+🧠 AI-Powered Chatbot: Interactive assistant to answer patient questions in plain language.
+
+📊 Analytics Dashboard: For doctors and caregivers to monitor adherence and literacy improvements.
+
+🔐 Security & Compliance
+
+HIPAA-compliant de-identification pipeline.
+
+End-to-end encrypted document transfers.
+
+Automatic deletion post-processing (no persistent storage).
+
+Full audit log for access attempts.
+
+🎯 Our Mission
+
+Liora isn’t just about tech — it’s about restoring clarity, trust, and empowerment in healthcare. By making medical information understandable and actionable, we reduce anxiety, prevent mistakes, and help patients focus on what truly matters: recovery and well-being.

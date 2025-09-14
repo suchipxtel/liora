@@ -1,0 +1,397 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Liora Design System - Blue Grey Periwinkle Aesthetic
+Professional medical interface with sophisticated blue-grey tones.
+All colors MUST be HSL. Clean, trustworthy, and elegant.
+*/
+
+@layer base {
+  :root {
+    /* Base colors - Cool blue-grey foundation */
+    --background: 220 15% 97%;
+    --foreground: 220 15% 15%;
+
+    /* Card system with cool undertones */
+    --card: 220 20% 99%;
+    --card-foreground: 220 15% 15%;
+
+    /* Popover system */
+    --popover: 220 20% 99%;
+    --popover-foreground: 220 15% 15%;
+
+    /* Liora blue gradient system */
+    --liora-primary: 220 75% 65%;
+    --liora-accent: 210 80% 75%;
+    --liora-deep: 230 60% 50%;
+    --primary: 220 75% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary system - Cool blues */
+    --secondary: 210 20% 94%;
+    --secondary-foreground: 210 25% 15%;
+
+    /* Muted system with blue undertones */
+    --muted: 210 15% 92%;
+    --muted-foreground: 210 12% 45%;
+
+    /* Accent - Medical blue for trust */
+    --accent-green: 200 75% 50%;
+    --accent: 200 75% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Medical jargon highlighting */
+    --jargon-red: 10 75% 60%;
+    --jargon-background: 10 100% 97%;
+    --jargon-border: 10 75% 80%;
+
+    /* Risk indicators */
+    --warning-yellow: 42 85% 55%;
+    --warning-background: 42 100% 96%;
+
+    /* Destructive system */
+    --destructive: 10 75% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Border and input system with blue tones */
+    --border: 210 20% 85%;
+    --input: 210 15% 92%;
+    --ring: 220 75% 65%;
+
+    /* Liora blue gradients */
+    --gradient-liora: linear-gradient(135deg, 
+      hsl(220 75% 65%) 0%, 
+      hsl(215 80% 70%) 25%,
+      hsl(210 85% 75%) 50%,
+      hsl(205 80% 78%) 75%,
+      hsl(210 85% 75%) 100%);
+    
+    --gradient-accent: linear-gradient(135deg, 
+      hsl(200 75% 50%) 0%, 
+      hsl(190 70% 55%) 100%);
+    
+    --gradient-warm: linear-gradient(135deg, 
+      hsl(210 25% 96%) 0%, 
+      hsl(210 20% 94%) 100%);
+    
+    --gradient-subtle: linear-gradient(180deg, 
+      hsl(210 20% 99%) 0%, 
+      hsl(210 15% 97%) 100%);
+
+    /* Professional shadows with blue undertones */
+    --shadow-soft: 0 2px 8px 0 hsl(210 30% 50% / 0.12), 0 1px 3px 0 hsl(210 30% 50% / 0.08);
+    --shadow-medium: 0 4px 12px -2px hsl(210 30% 50% / 0.16), 0 2px 6px -1px hsl(210 30% 50% / 0.08);
+    --shadow-elevation: 0 12px 20px -6px hsl(210 30% 50% / 0.20), 0 4px 8px -2px hsl(210 30% 50% / 0.12);
+    --shadow-glow: 0 0 25px hsl(220 75% 65% / 0.3);
+
+    /* Chatbot system - Sophisticated teal theme */
+    --chat-primary: 184 81% 37%;
+    --chat-secondary: 184 25% 94%;
+    --chat-background: 184 100% 98%;
+
+    /* Enhanced animation and transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-elegant: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  }
+  
+  .font-serif {
+    font-family: 'Crimson Text', Georgia, serif;
+  }
+}
+
+@layer components {
+  /* Medical jargon highlighting system */
+  .medical-term {
+    @apply relative inline-block bg-red-50 text-red-800 px-1 py-0.5 rounded-sm cursor-help border-b-2 border-dotted border-red-400;
+    @apply transition-all duration-200 hover:bg-red-100 hover:scale-105;
+  }
+
+  .medical-term.high-contrast {
+    @apply bg-yellow-400 text-black border-yellow-600;
+    font-weight: 600;
+  }
+
+  .medical-term.high-contrast:hover {
+    @apply bg-yellow-300;
+  }
+
+  /* High contrast mode utilities */
+  .high-contrast-bg {
+    @apply bg-gray-900 text-white;
+  }
+
+  .high-contrast-border {
+    @apply border-gray-600;
+  }
+
+  .high-contrast-card {
+    @apply bg-gray-800 text-white border-gray-600;
+  }
+
+  .medical-term::after {
+    content: '';
+    @apply absolute -inset-0.5 bg-red-200 rounded opacity-0 -z-10;
+    @apply transition-opacity duration-200;
+  }
+
+  .medical-term:hover::after {
+    @apply opacity-30;
+  }
+
+  /* Summary section cards */
+  .summary-section {
+    @apply bg-card border border-border rounded-lg p-6 mb-4;
+    box-shadow: var(--shadow-soft);
+    @apply transition-all duration-200 hover:shadow-md;
+  }
+
+  /* Document viewer styling */
+  .document-viewer {
+    @apply bg-card border border-border rounded-lg p-6 max-h-[70vh] overflow-y-auto;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .document-viewer::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  .document-viewer::-webkit-scrollbar-track {
+    @apply bg-muted rounded-full;
+  }
+
+  .document-viewer::-webkit-scrollbar-thumb {
+    @apply bg-primary rounded-full;
+  }
+
+  /* Button variants for Liora interface */
+  .btn-liora {
+    @apply bg-gradient-to-r from-primary to-blue-500 text-primary-foreground;
+    @apply font-medium px-6 py-3 rounded-lg;
+    @apply transition-all duration-200 hover:shadow-lg hover:scale-105;
+    background: var(--gradient-liora);
+  }
+
+  .btn-clarity {
+    @apply bg-gradient-to-r from-accent to-green-600 text-accent-foreground;
+    @apply font-medium px-4 py-2 rounded-lg;
+    @apply transition-all duration-200 hover:shadow-md hover:scale-105;
+    background: var(--gradient-clarity);
+  }
+
+  /* Upload area styling */
+  .upload-area {
+    @apply border-2 border-dashed border-primary/30 rounded-xl p-8;
+    @apply bg-gradient-to-br from-primary/5 to-primary/10;
+    @apply transition-all duration-300 hover:border-primary/50 hover:bg-primary/10;
+  }
+
+  .upload-area.drag-over {
+    @apply border-primary bg-primary/15 scale-105;
+  }
+
+  /* Chatbot specific styling */
+  .chat-bubble {
+    @apply bg-gradient-to-r from-teal-600 to-teal-700 text-white;
+    @apply rounded-2xl px-4 py-3 max-w-xs;
+    background: linear-gradient(135deg, hsl(var(--chat-primary)) 0%, hsl(184 81% 30%) 100%);
+  }
+
+  .chat-input {
+    @apply bg-white border-2 border-teal-200 rounded-xl px-4 py-3;
+    @apply focus:border-teal-500 focus:ring-2 focus:ring-teal-200;
+  }
+
+  /* Highlight sync animation */
+  .highlight-sync {
+    @apply bg-yellow-100 border-l-4 border-yellow-400;
+    animation: highlight-pulse 0.6s ease-in-out;
+  }
+
+  /* Progress indicators */
+  .progress-medical {
+    @apply h-2 bg-primary/20 rounded-full overflow-hidden;
+  }
+
+  .progress-medical::after {
+    content: '';
+    @apply block h-full bg-gradient-to-r from-primary to-blue-500 rounded-full;
+    background: var(--gradient-liora);
+    animation: progress-flow 1.5s ease-in-out infinite;
+  }
+}
+
+@layer utilities {
+  /* Animation utilities */
+  .animate-fade-in {
+    animation: fade-in 0.3s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.2s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.3s ease-out forwards;
+  }
+
+  .hover-lift {
+    @apply transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg;
+  }
+
+  /* Liora interface utilities */
+  .text-gradient-liora {
+    background: var(--gradient-liora);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-liora {
+    background: var(--gradient-liora);
+  }
+
+  .bg-gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  .bg-gradient-warm {
+    background: var(--gradient-warm);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-medium {
+    box-shadow: var(--shadow-medium);
+  }
+
+  .shadow-elevation {
+    box-shadow: var(--shadow-elevation);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+}
+
+/* Keyframe animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes highlight-pulse {
+  0%, 100% {
+    background-color: transparent;
+  }
+  50% {
+    background-color: hsl(var(--warning-background));
+  }
+}
+
+@keyframes progress-flow {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(400%);
+  }
+}

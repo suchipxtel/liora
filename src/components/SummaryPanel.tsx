@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { BookOpen, Award, ExternalLink, ChevronDown, ChevronUp, Info, Star } from 'lucide-react';
+import { BookOpen, Award, ExternalLink, ChevronDown, ChevronUp, Info } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Progress } from '@/components/ui/progress';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import heartAttackImage from '@/assets/heart-attack-diagram.jpg';
 import medicationsImage from '@/assets/medications.jpg';
@@ -91,32 +90,6 @@ export const SummaryPanel: React.FC<SummaryPanelProps> = ({
         </div>
       </div>
 
-      {/* AI Confidence Score */}
-      <motion.div
-        className={`p-4 border rounded-lg mb-6 ${
-          accessibilityMode.highContrast 
-            ? 'bg-gray-800 text-white border-gray-600' 
-            : 'bg-card border-border'
-        }`}
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-      >
-        <div className="flex items-center justify-between mb-3">
-          <div className="flex items-center space-x-2">
-            <Star className="h-5 w-5 text-primary" />
-            <span className="font-semibold text-primary">AI Confidence Score</span>
-          </div>
-          <Badge className={`text-primary font-bold text-lg px-4 py-2 ${
-            accessibilityMode.highContrast ? 'bg-gray-700 border-gray-500' : 'bg-primary/15 border-primary/30'
-          }`}>
-            {Math.round(confidence * 100)}%
-          </Badge>
-        </div>
-        <div className="flex items-center space-x-3">
-          <Progress value={confidence * 100} className="flex-1 h-3" />
-          <span className="text-sm text-muted-foreground">Highly Accurate</span>
-        </div>
-      </motion.div>
 
       {/* Summary Sections */}
       <div className="space-y-4">
@@ -191,17 +164,6 @@ export const SummaryPanel: React.FC<SummaryPanelProps> = ({
             </Badge>
           </div>
           
-          {/* Medication Image */}
-          <div className="mb-4 p-4 bg-muted/30 rounded-lg">
-            <img 
-              src={medicationsImage} 
-              alt="Medication bottles showing aspirin and other heart medications"
-              className="w-full max-w-md mx-auto rounded-lg shadow-sm"
-            />
-            <p className="text-xs text-muted-foreground text-center mt-2">
-              Your prescribed heart medications: Aspirin, Ticagrelor, and others
-            </p>
-          </div>
           
           <p className="text-foreground leading-relaxed text-lg font-medium">{summary.medications}</p>
           <div className={`mt-3 p-3 rounded-lg border ${
@@ -236,7 +198,49 @@ export const SummaryPanel: React.FC<SummaryPanelProps> = ({
               ⚡ Action Items
             </Badge>
           </div>
-          <p className="text-foreground leading-relaxed text-lg font-medium">{summary.instructions}</p>
+          
+          {/* Important action items as bullet points */}
+          <div className="space-y-3">
+            <div className="flex items-start space-x-3 p-3 bg-emerald-50 border-l-4 border-emerald-400 rounded-r-lg">
+              <div className="w-2 h-2 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></div>
+              <div>
+                <h4 className="font-semibold text-emerald-800">Schedule Follow-up (URGENT)</h4>
+                <p className="text-emerald-700 text-sm">Book appointment with cardiologist within 1-2 weeks - this is critical for your recovery</p>
+              </div>
+            </div>
+            
+            <div className="flex items-start space-x-3 p-3 bg-red-50 border-l-4 border-red-400 rounded-r-lg">
+              <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
+              <div>
+                <h4 className="font-semibold text-red-800">Emergency Warning Signs</h4>
+                <p className="text-red-700 text-sm">Call 911 immediately if you experience: chest pain, shortness of breath, or feeling faint</p>
+              </div>
+            </div>
+            
+            <div className="flex items-start space-x-3 p-3 bg-blue-50 border-l-4 border-blue-400 rounded-r-lg">
+              <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+              <div>
+                <h4 className="font-semibold text-blue-800">Take Medications as Prescribed</h4>
+                <p className="text-blue-700 text-sm">Do not skip doses or stop taking medications without consulting your doctor first</p>
+              </div>
+            </div>
+            
+            <div className="flex items-start space-x-3 p-3 bg-purple-50 border-l-4 border-purple-400 rounded-r-lg">
+              <div className="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
+              <div>
+                <h4 className="font-semibold text-purple-800">Activity Guidelines</h4>
+                <p className="text-purple-700 text-sm">Avoid strenuous activity for the next week, but gentle walking is encouraged for recovery</p>
+              </div>
+            </div>
+            
+            <div className="flex items-start space-x-3 p-3 bg-orange-50 border-l-4 border-orange-400 rounded-r-lg">
+              <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+              <div>
+                <h4 className="font-semibold text-orange-800">Heart-Healthy Diet</h4>
+                <p className="text-orange-700 text-sm">Start a diet low in sodium and saturated fats to support your heart health</p>
+              </div>
+            </div>
+          </div>
         </motion.div>
       </div>
 

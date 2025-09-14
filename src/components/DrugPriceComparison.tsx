@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Slider } from '@/components/ui/slider';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
 
 interface Drug {
   name: string;
@@ -78,21 +79,44 @@ export const DrugPriceComparison: React.FC<DrugPriceComparisonProps> = ({ medica
       </CardHeader>
       
       <CardContent className="space-y-6">
-        {/* Drug Selection */}
-        <div className="space-y-2">
-          <label className="text-sm font-medium">Select Medication</label>
-          <div className="flex gap-2">
-            {Object.keys(drugPrices).map((drug) => (
-              <Button
-                key={drug}
-                variant={selectedDrug === drug ? "default" : "outline"}
-                size="sm"
-                onClick={() => setSelectedDrug(drug)}
-                className="capitalize"
-              >
-                {drug === 'ticagrelor' ? 'Ticagrelor 90mg' : 'Aspirin 81mg'}
+        {/* Top Section: Drug Selection and Zip Code */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {/* Drug Selection */}
+          <div className="space-y-2">
+            <label className="text-sm font-medium">Select Medication</label>
+            <div className="flex gap-2">
+              {Object.keys(drugPrices).map((drug) => (
+                <Button
+                  key={drug}
+                  variant={selectedDrug === drug ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => setSelectedDrug(drug)}
+                  className="capitalize"
+                >
+                  {drug === 'ticagrelor' ? 'Ticagrelor 90mg' : 'Aspirin 81mg'}
+                </Button>
+              ))}
+            </div>
+          </div>
+          
+          {/* Zip Code Input */}
+          <div className="space-y-2">
+            <label className="text-sm font-medium">Your Zip Code</label>
+            <div className="flex gap-2">
+              <Input
+                type="text"
+                placeholder="Enter ZIP (e.g., 10001)"
+                className="flex-1"
+                maxLength={5}
+              />
+              <Button size="sm" variant="outline">
+                <MapPin className="h-4 w-4 mr-1" />
+                Search
               </Button>
-            ))}
+            </div>
+            <p className="text-xs text-muted-foreground">
+              Enter your ZIP code for accurate local pricing
+            </p>
           </div>
         </div>
 

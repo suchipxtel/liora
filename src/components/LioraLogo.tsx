@@ -41,19 +41,19 @@ export const LioraLogo: React.FC<LioraLogoProps> = ({
         >
           <defs>
             <linearGradient id="flowing-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="hsl(220, 80%, 70%)" />
-              <stop offset="25%" stopColor="hsl(215, 85%, 75%)" />
-              <stop offset="50%" stopColor="hsl(210, 90%, 80%)" />
-              <stop offset="75%" stopColor="hsl(205, 85%, 83%)" />
-              <stop offset="100%" stopColor="hsl(210, 90%, 80%)" />
+              <stop offset="0%" stopColor="hsl(220, 90%, 45%)" />
+              <stop offset="25%" stopColor="hsl(215, 95%, 50%)" />
+              <stop offset="50%" stopColor="hsl(210, 100%, 55%)" />
+              <stop offset="75%" stopColor="hsl(205, 95%, 60%)" />
+              <stop offset="100%" stopColor="hsl(200, 90%, 65%)" />
             </linearGradient>
             <linearGradient id="inner-glow" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="hsl(215, 90%, 85%)" />
-              <stop offset="100%" stopColor="hsl(220, 85%, 78%)" />
+              <stop offset="0%" stopColor="hsl(215, 100%, 60%)" />
+              <stop offset="100%" stopColor="hsl(220, 95%, 55%)" />
             </linearGradient>
             <linearGradient id="accent-glow" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="hsl(210, 95%, 92%)" />
-              <stop offset="100%" stopColor="hsl(220, 90%, 88%)" />
+              <stop offset="0%" stopColor="hsl(210, 100%, 70%)" />
+              <stop offset="100%" stopColor="hsl(220, 95%, 65%)" />
             </linearGradient>
             <filter id="glow">
               <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
@@ -99,11 +99,23 @@ export const LioraLogo: React.FC<LioraLogoProps> = ({
           {/* Dynamic flowing accent */}
           <motion.path
             d="M16 14 Q20 12, 24 14 Q22 18, 20 16 Q18 14, 16 14 Z"
-            fill="hsl(220, 85%, 90%)"
-            opacity="0.8"
+            fill="hsl(220, 100%, 75%)"
+            opacity="0.9"
             initial={{ opacity: 0 }}
-            animate={{ opacity: 0.8 }}
+            animate={{ opacity: 0.9 }}
             transition={{ duration: 0.8, delay: 1.2 }}
+          />
+          
+          {/* Additional highlight for visibility */}
+          <motion.circle
+            cx="20"
+            cy="18"
+            r="2"
+            fill="hsl(0, 0%, 100%)"
+            opacity="0.8"
+            initial={{ r: 0 }}
+            animate={{ r: 2 }}
+            transition={{ duration: 0.6, delay: 1.5 }}
           />
         </svg>
       </motion.div>

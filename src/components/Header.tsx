@@ -25,12 +25,9 @@ export const Header: React.FC<HeaderProps> = ({ accessibilityMode, onToggleAcces
           {/* Logo */}
           <LioraLogo size="md" />
 
-          {/* Navigation - now shows Delete My Data */}
+          {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
-            <div className="flex items-center space-x-2 text-white/90">
-              <Trash2 className="h-4 w-4" />
-              <span className="text-sm font-medium">Delete My Data</span>
-            </div>
+            {/* Navigation items can be added here if needed */}
           </nav>
 
           {/* Actions */}
@@ -47,19 +44,20 @@ export const Header: React.FC<HeaderProps> = ({ accessibilityMode, onToggleAcces
                   <h4 className="font-medium">Accessibility Settings</h4>
                   
                   <div className="space-y-3">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-2">
-                        <Contrast className="h-4 w-4" />
-                        <span className="text-sm">High Contrast</span>
-                      </div>
-                      <Button
-                        variant={accessibilityMode.highContrast ? "default" : "outline"}
-                        size="sm"
-                        onClick={() => onToggleAccessibility('contrast')}
-                      >
-                        {accessibilityMode.highContrast ? 'On' : 'Off'}
-                      </Button>
-                    </div>
+                     <div className="flex items-center justify-between">
+                       <div className="flex items-center space-x-2">
+                         <Contrast className="h-4 w-4" />
+                         <span className="text-sm">High Contrast</span>
+                       </div>
+                       <Button
+                         variant={accessibilityMode.highContrast ? "default" : "outline"}
+                         size="sm"
+                         onClick={() => onToggleAccessibility('contrast')}
+                         className={accessibilityMode.highContrast ? "bg-yellow-400 text-black hover:bg-yellow-300" : ""}
+                       >
+                         {accessibilityMode.highContrast ? 'On' : 'Off'}
+                       </Button>
+                     </div>
                     
                     <div className="space-y-2">
                       <div className="flex items-center space-x-2">

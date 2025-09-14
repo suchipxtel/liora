@@ -36,30 +36,42 @@ const Index = () => {
       redactedText: `
 **COMPREHENSIVE EMERGENCY DEPARTMENT DISCHARGE SUMMARY**
 
-Patient [REDACTED] presented to the emergency department on [REDACTED] at 14:30 hours with chief complaints of severe <span class="medical-term" data-term="chest pain" data-definition="Discomfort or pain felt in the chest area, often indicating heart problems">chest pain</span> radiating to the left arm and <span class="medical-term" data-term="dyspnea" data-definition="Shortness of breath or difficulty breathing">dyspnea</span> of 3-hour duration.
+**PATIENT IDENTIFICATION & PRESENTATION:**
+Patient [REDACTED] presented to the emergency department on [REDACTED] at 14:30 hours with chief complaints of severe <span class="medical-term" data-term="chest pain" data-definition="Discomfort or pain felt in the chest area, often indicating heart problems">chest pain</span> radiating to the left arm and <span class="medical-term" data-term="dyspnea" data-definition="Shortness of breath or difficulty breathing">dyspnea</span> of 3-hour duration. The patient reported the pain began suddenly while at rest, which is particularly concerning for <span class="medical-term" data-term="acute coronary syndrome" data-definition="A group of conditions caused by sudden reduced blood flow to the heart">acute coronary syndrome</span>.
 
-**CLINICAL PRESENTATION:**
-- Pain described as crushing, substernal, 8/10 severity
-- Associated with <span class="medical-term" data-term="diaphoresis" data-definition="Excessive sweating, often a sign of heart stress">diaphoresis</span> and <span class="medical-term" data-term="nausea" data-definition="Feeling of sickness with an inclination to vomit">nausea</span>
-- <span class="medical-term" data-term="vital signs" data-definition="Basic body measurements like blood pressure, heart rate, temperature">Vital signs</span>: BP 165/95, HR 88, RR 22, O2 sat 94% on room air
+**DETAILED CLINICAL PRESENTATION:**
+- Pain described as crushing, substernal, 8/10 severity on numeric rating scale
+- Classic radiation pattern to left arm and jaw, lasting continuously for 3 hours
+- Associated with profuse <span class="medical-term" data-term="diaphoresis" data-definition="Excessive sweating, often a sign of heart stress">diaphoresis</span> and severe <span class="medical-term" data-term="nausea" data-definition="Feeling of sickness with an inclination to vomit">nausea</span>
+- Patient appeared anxious and in moderate distress upon arrival
+- <span class="medical-term" data-term="vital signs" data-definition="Basic body measurements like blood pressure, heart rate, temperature">Vital signs</span> on presentation: BP 165/95 mmHg (elevated), HR 88 bpm (regular), RR 22 breaths/min (slightly elevated), O2 saturation 94% on room air (concerning), Temperature 98.6°F
 
-**DIAGNOSTIC FINDINGS:**
-Initial evaluation revealed significantly elevated <span class="medical-term" data-term="troponin I" data-definition="A protein released when heart muscle is damaged, indicating a heart attack">troponin I</span> levels at 8.4 ng/mL (normal <0.04) and <span class="medical-term" data-term="EKG" data-definition="Electrocardiogram - a test that measures heart electrical activity">EKG</span> changes showing <span class="medical-term" data-term="ST depressions" data-definition="Changes in heart rhythm pattern indicating heart muscle damage">ST depressions</span> in leads II, III, and aVF, consistent with <span class="medical-term" data-term="NSTEMI" data-definition="Non-ST Elevation Myocardial Infarction - a type of heart attack where arteries are partially blocked">NSTEMI</span>.
+**COMPREHENSIVE DIAGNOSTIC EVALUATION:**
+Initial laboratory evaluation revealed significantly elevated <span class="medical-term" data-term="troponin I" data-definition="A protein released when heart muscle is damaged, indicating a heart attack">troponin I</span> levels at 8.4 ng/mL (critically elevated; normal <0.04), indicating substantial <span class="medical-term" data-term="myocardial necrosis" data-definition="Death of heart muscle tissue">myocardial necrosis</span>. Serial <span class="medical-term" data-term="troponin" data-definition="Cardiac enzyme that indicates heart muscle damage">troponin</span> measurements showed progressive elevation consistent with ongoing heart muscle damage.
 
-Additional labs: <span class="medical-term" data-term="CK-MB" data-definition="An enzyme that rises when heart muscle is damaged">CK-MB</span> 45 U/L, <span class="medical-term" data-term="BNP" data-definition="Brain natriuretic peptide - indicates heart strain">BNP</span> 892 pg/mL, <span class="medical-term" data-term="lipid panel" data-definition="Blood test measuring cholesterol and other fats">lipid panel</span> showing LDL 165 mg/dL.
+The 12-lead <span class="medical-term" data-term="EKG" data-definition="Electrocardiogram - a test that measures heart electrical activity">electrocardiogram</span> demonstrated significant <span class="medical-term" data-term="ST depressions" data-definition="Changes in heart rhythm pattern indicating heart muscle damage">ST segment depressions</span> of 2mm in leads II, III, and aVF, along with reciprocal changes in the lateral leads (V5-V6). These findings were consistent with <span class="medical-term" data-term="NSTEMI" data-definition="Non-ST Elevation Myocardial Infarction - a type of heart attack where arteries are partially blocked">Non-ST Elevation Myocardial Infarction (NSTEMI)</span>, indicating a partially occluded coronary artery requiring immediate intervention.
 
-**TREATMENT INITIATED:**
-Patient was immediately started on <span class="medical-term" data-term="dual antiplatelet therapy" data-definition="Two medications that prevent blood clots">dual antiplatelet therapy</span> consisting of:
-- <span class="medical-term" data-term="aspirin 81mg" data-definition="Low-dose blood thinner taken daily to prevent clots">Aspirin 81mg</span> daily
-- <span class="medical-term" data-term="ticagrelor 90mg bid" data-definition="Blood thinner taken twice daily to prevent clots - brand name Brilinta">Ticagrelor 90mg bid</span>
+Additional diagnostic laboratory results included: <span class="medical-term" data-term="CK-MB" data-definition="An enzyme that rises when heart muscle is damaged">creatine kinase-MB</span> 45 U/L (elevated; normal <6.3), <span class="medical-term" data-term="BNP" data-definition="Brain natriuretic peptide - indicates heart strain">B-type natriuretic peptide</span> 892 pg/mL (significantly elevated; normal <100), indicating heart strain. Complete <span class="medical-term" data-term="lipid panel" data-definition="Blood test measuring cholesterol and other fats">lipid panel</span> revealed concerning cardiovascular risk factors: LDL cholesterol 165 mg/dL (high risk), HDL 35 mg/dL (low), triglycerides 280 mg/dL (elevated).
 
-Additional medications:
-- <span class="medical-term" data-term="atorvastatin 80mg" data-definition="High-intensity statin to lower cholesterol">Atorvastatin 80mg</span> daily
-- <span class="medical-term" data-term="metoprolol 25mg" data-definition="Beta-blocker to reduce heart rate and blood pressure">Metoprolol 25mg</span> twice daily
+**IMMEDIATE TREATMENT PROTOCOL:**
+Patient was emergently started on evidence-based <span class="medical-term" data-term="dual antiplatelet therapy" data-definition="Two medications that prevent blood clots">dual antiplatelet therapy</span> per <span class="medical-term" data-term="ACS guidelines" data-definition="Acute Coronary Syndrome treatment protocols">ACS guidelines</span>:
+- <span class="medical-term" data-term="aspirin 81mg" data-definition="Low-dose blood thinner taken daily to prevent clots">Aspirin 81mg</span> daily (loading dose 325mg given immediately)
+- <span class="medical-term" data-term="ticagrelor 90mg bid" data-definition="Blood thinner taken twice daily to prevent clots - brand name Brilinta">Ticagrelor 90mg twice daily</span> (loading dose 180mg administered)
 
+Concurrent cardiovascular medications initiated:
+- <span class="medical-term" data-term="atorvastatin 80mg" data-definition="High-intensity statin to lower cholesterol">Atorvastatin 80mg</span> daily (high-intensity statin therapy for plaque stabilization)
+- <span class="medical-term" data-term="metoprolol 25mg" data-definition="Beta-blocker to reduce heart rate and blood pressure">Metoprolol tartrate 25mg</span> twice daily (beta-blockade for cardioprotection)
+- <span class="medical-term" data-term="lisinopril" data-definition="ACE inhibitor to protect the heart and lower blood pressure">Lisinopril 5mg</span> daily (ACE inhibition for cardiac remodeling prevention)
+
+**HOSPITAL COURSE & MONITORING:**
+Patient was admitted to the <span class="medical-term" data-term="cardiac intensive care unit" data-definition="Specialized unit for heart patients requiring close monitoring">cardiac intensive care unit</span> for continuous telemetry monitoring. Serial <span class="medical-term" data-term="troponin" data-definition="Cardiac enzyme that indicates heart muscle damage">troponin</span> measurements peaked at 12.1 ng/mL at 8 hours post-admission before beginning to trend downward, indicating the acute phase was resolving. <span class="medical-term" data-term="echocardiogram" data-definition="Ultrasound of the heart to assess function">Echocardiogram</span> revealed mild regional wall motion abnormality in the inferior wall with preserved overall <span class="medical-term" data-term="ejection fraction" data-definition="Measure of how well the heart pumps blood">ejection fraction</span> of 50%.
+
+Patient Information:
 DOB: 03/14/1967
 ZIP: [REDACTED]
-Emergency Contact: [REDACTED]`,
+Emergency Contact: [REDACTED]
+Insurance: [REDACTED]
+Primary Care Physician: Dr. [REDACTED]`,
       
       summary: {
         diagnosis: "You had a type of heart attack called NSTEMI (Non-ST Elevation Myocardial Infarction). This happens when one of the arteries that supplies blood to your heart gets partially blocked by a blood clot or plaque buildup. Unlike a massive heart attack, your artery wasn't completely blocked, which is why you're recovering well. The chest pain you felt was your heart muscle not getting enough oxygen.",
@@ -145,7 +157,7 @@ Emergency Contact: [REDACTED]`,
               </motion.p>
               
               {/* Features */}
-                <div className="flex items-center space-x-6 mb-12">
+                <div className="flex items-center justify-center space-x-6 mb-12">
                   <div className="flex items-center justify-center space-x-3 p-4 rounded-lg bg-card shadow-soft hover-lift">
                     <Clock className="h-6 w-6 text-primary" />
                     <span className="font-medium">Instant Processing</span>
@@ -153,10 +165,6 @@ Emergency Contact: [REDACTED]`,
                   <div className="flex items-center justify-center space-x-3 p-4 rounded-lg bg-card shadow-soft hover-lift">
                     <CheckCircle2 className="h-6 w-6 text-accent-green" />
                     <span className="font-medium">AI-Powered Analysis</span>
-                  </div>
-                  <div className="flex items-center justify-center space-x-3 p-4 rounded-lg bg-card shadow-soft hover-lift">
-                    <Trash2 className="h-6 w-6 text-muted-foreground" />
-                    <span className="font-medium">Delete My Data</span>
                   </div>
                 </div>
             </div>

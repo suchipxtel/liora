@@ -15,6 +15,8 @@ interface Drug {
   distance: string;
   rating: number;
   generic: boolean;
+  gisPrice: number;
+  coordinates?: { lat: number; lng: number } | null;
 }
 
 interface DrugPriceComparisonProps {
@@ -24,6 +26,8 @@ interface DrugPriceComparisonProps {
 export const DrugPriceComparison: React.FC<DrugPriceComparisonProps> = ({ medications }) => {
   const [selectedDrug, setSelectedDrug] = useState('aspirin');
   const [priceRange, setPriceRange] = useState([50, 150]);
+  const [zipCode, setZipCode] = useState('');
+  const [searchResults, setSearchResults] = useState<Drug[]>([]);
 
   // Enhanced drug price data with GIS-based costs
   const drugPrices = {
@@ -49,10 +53,34 @@ export const DrugPriceComparison: React.FC<DrugPriceComparisonProps> = ({ medica
     }
   };
 
+  // Simulate pharmacy search based on zip code
+  const searchPharmacies = () => {
+    if (!zipCode || zipCode.length !== 5) {
+      alert('Please enter a valid 5-digit ZIP code');
+      return;
+    }
+    
+    const currentData = drugPrices[selectedDrug as keyof typeof drugPrices];
+    // Simulate zip code based pricing variations
+    const zipVariation = parseInt(zipCode) % 100;
+    const priceModifier = (zipVariation - 50) * 0.02; // -2% to +2% variation
+    
+    const updatedResults = currentData.alternatives.map(drug => ({
+      ...drug,
+      gisPrice: Math.max(1, Math.round(drug.gisPrice * (1 + priceModifier))),
+      distance: `${(Math.random() * 5 + 0.5).toFixed(1)} mi` // Random distance
+    }));
+    
+    // Sort by price (lowest first)
+    updatedResults.sort((a, b) => a.gisPrice - b.gisPrice);
+    setSearchResults(updatedResults);
+  };
+
   const currentData = drugPrices[selectedDrug as keyof typeof drugPrices];
-  const minPrice = Math.min(...currentData.alternatives.map(d => d.gisPrice));
-  const maxPrice = Math.max(...currentData.alternatives.map(d => d.gisPrice));
-  const avgPrice = Math.round(currentData.alternatives.reduce((sum, d) => sum + d.gisPrice, 0) / currentData.alternatives.length);
+  const displayResults = searchResults.length > 0 ? searchResults : currentData.alternatives;
+  const minPrice = Math.min(...displayResults.map(d => d.gisPrice));
+  const maxPrice = Math.max(...displayResults.map(d => d.gisPrice));
+  const avgPrice = Math.round(displayResults.reduce((sum, d) => sum + d.gisPrice, 0) / displayResults.length);
 
   const getPriceColor = (price: number, currentPrice: number) => {
     if (price < currentPrice * 0.8) return 'text-green-600';
@@ -108,14 +136,16 @@ export const DrugPriceComparison: React.FC<DrugPriceComparisonProps> = ({ medica
                 placeholder="Enter ZIP (e.g., 10001)"
                 className="flex-1"
                 maxLength={5}
+                value={zipCode}
+                onChange={(e) => setZipCode(e.target.value.replace(/\D/g, ''))}
               />
-              <Button size="sm" variant="outline">
+              <Button size="sm" variant="outline" onClick={searchPharmacies}>
                 <MapPin className="h-4 w-4 mr-1" />
                 Search
               </Button>
             </div>
             <p className="text-xs text-muted-foreground">
-              Enter your ZIP code for accurate local pricing
+              {zipCode ? `Showing results for ZIP ${zipCode}` : 'Enter your ZIP code for accurate local pricing'}
             </p>
           </div>
         </div>
@@ -156,12 +186,12 @@ export const DrugPriceComparison: React.FC<DrugPriceComparisonProps> = ({ medica
         {/* Alternative Options with GIS-based pricing */}
         <div className="space-y-3">
           <div className="flex items-center justify-between">
-            <h4 className="font-medium">Nearby Pharmacies (GIS-optimized prices)</h4>
+            <h4 className="font-medium">Nearby Pharmacies {zipCode && `(ZIP ${zipCode})`}</h4>
             <Badge variant="outline" className="text-xs">
               Real-time pricing
             </Badge>
           </div>
-          {currentData.alternatives.map((drug, index) => (
+          {displayResults.map((drug, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 10 }}
@@ -177,7 +207,7 @@ export const DrugPriceComparison: React.FC<DrugPriceComparisonProps> = ({ medica
                   )}
                   {drug.gisPrice < drug.price && (
                     <Badge variant="outline" className="text-xs text-green-600">
-                      GIS Discount
+                      ZIP Discount
                     </Badge>
                   )}
                 </div>
@@ -217,14 +247,17 @@ export const DrugPriceComparison: React.FC<DrugPriceComparisonProps> = ({ medica
           <div className="flex items-start gap-2">
             <TrendingDown className="h-4 w-4 text-green-600 mt-0.5" />
             <div className="text-sm">
-              <p className="font-medium text-green-800">Optimized Monthly Savings</p>
+              <p className="font-medium text-green-800">
+                {zipCode ? `Optimized Savings for ZIP ${zipCode}` : 'Potential Monthly Savings'}
+              </p>
               <p className="text-green-700">
-                Based on real-time GIS pricing data, you could save up to <span className="font-bold">
+                You could save up to <span className="font-bold">
                   ${currentData.currentPrice - minPrice}
-                </span> per month. Average area price: <span className="font-medium">${avgPrice}</span>
+                </span> per month by switching pharmacies.
+                {zipCode && <span> Average local price: <span className="font-medium">${avgPrice}</span></span>}
               </p>
               <p className="text-xs text-green-600 mt-1">
-                Prices updated hourly using location-based pharmacy networks
+                {zipCode ? `Prices updated for your area` : 'Enter ZIP code for personalized results'}
               </p>
             </div>
           </div>

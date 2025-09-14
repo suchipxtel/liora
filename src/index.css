@@ -21,24 +21,24 @@ All colors MUST be HSL. Clean, professional, and accessible.
     --popover: 210 30% 99%;
     --popover-foreground: 215 25% 12%;
 
-    /* Primary blue system - Medical trust blue */
-    --liora-primary: 210 85% 55%;
-    --liora-accent: 200 90% 60%;
-    --liora-deep: 220 80% 45%;
-    --primary: 210 85% 55%;
+    /* Primary blue system - Softer medical blue */
+    --liora-primary: 210 65% 65%;
+    --liora-accent: 200 70% 70%;
+    --liora-deep: 220 60% 55%;
+    --primary: 210 65% 65%;
     --primary-foreground: 0 0% 100%;
 
     /* Secondary system - Lighter blues */
     --secondary: 205 30% 92%;
     --secondary-foreground: 210 40% 15%;
 
-    /* Muted system with stronger blue undertones */
-    --muted: 205 25% 90%;
-    --muted-foreground: 210 20% 40%;
+    /* Muted system with softer blue undertones */
+    --muted: 205 20% 93%;
+    --muted-foreground: 210 15% 45%;
 
-    /* Accent - Strong medical blue for trust */
-    --accent-green: 190 85% 45%;
-    --accent: 190 85% 45%;
+    /* Accent - Softer medical blue for trust */
+    --accent-green: 190 65% 55%;
+    --accent: 190 65% 55%;
     --accent-foreground: 0 0% 100%;
 
     /* Medical jargon highlighting */
@@ -54,36 +54,36 @@ All colors MUST be HSL. Clean, professional, and accessible.
     --destructive: 10 75% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    /* Border and input system with stronger blue tones */
-    --border: 210 30% 80%;
-    --input: 205 25% 88%;
-    --ring: 210 85% 55%;
+    /* Border and input system with softer blue tones */
+    --border: 210 20% 85%;
+    --input: 205 18% 92%;
+    --ring: 210 65% 65%;
 
-    /* Enhanced blue gradients for professional medical interface */
+    /* Softer blue gradients for elegant medical interface */
     --gradient-liora: linear-gradient(135deg, 
-      hsl(220 85% 50%) 0%, 
-      hsl(215 90% 55%) 25%,
-      hsl(210 95% 60%) 50%,
-      hsl(205 90% 65%) 75%,
-      hsl(200 85% 70%) 100%);
+      hsl(220 60% 65%) 0%, 
+      hsl(215 65% 70%) 25%,
+      hsl(210 70% 75%) 50%,
+      hsl(205 65% 78%) 75%,
+      hsl(200 60% 82%) 100%);
     
     --gradient-accent: linear-gradient(135deg, 
-      hsl(190 85% 45%) 0%, 
-      hsl(180 80% 50%) 100%);
+      hsl(190 65% 55%) 0%, 
+      hsl(180 60% 60%) 100%);
     
     --gradient-warm: linear-gradient(135deg, 
-      hsl(205 35% 94%) 0%, 
-      hsl(210 30% 92%) 100%);
+      hsl(205 25% 96%) 0%, 
+      hsl(210 20% 94%) 100%);
     
     --gradient-subtle: linear-gradient(180deg, 
-      hsl(210 30% 98%) 0%, 
-      hsl(205 25% 96%) 100%);
+      hsl(210 22% 98%) 0%, 
+      hsl(205 18% 96%) 100%);
 
-    /* Professional shadows with deep blue undertones */
-    --shadow-soft: 0 2px 8px 0 hsl(215 40% 45% / 0.15), 0 1px 3px 0 hsl(215 40% 45% / 0.10);
-    --shadow-medium: 0 4px 12px -2px hsl(215 40% 45% / 0.20), 0 2px 6px -1px hsl(215 40% 45% / 0.12);
-    --shadow-elevation: 0 12px 20px -6px hsl(215 40% 45% / 0.25), 0 4px 8px -2px hsl(215 40% 45% / 0.15);
-    --shadow-glow: 0 0 25px hsl(210 85% 55% / 0.4);
+    /* Professional shadows with softer blue undertones */
+    --shadow-soft: 0 2px 8px 0 hsl(215 30% 55% / 0.12), 0 1px 3px 0 hsl(215 30% 55% / 0.08);
+    --shadow-medium: 0 4px 12px -2px hsl(215 30% 55% / 0.16), 0 2px 6px -1px hsl(215 30% 55% / 0.10);
+    --shadow-elevation: 0 12px 20px -6px hsl(215 30% 55% / 0.20), 0 4px 8px -2px hsl(215 30% 55% / 0.12);
+    --shadow-glow: 0 0 25px hsl(210 65% 65% / 0.3);
 
     /* Chatbot system - Sophisticated teal theme */
     --chat-primary: 184 81% 37%;
